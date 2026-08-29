@@ -1,4 +1,5 @@
 python-dotenv
+numpy
 anthropic
 openai
 torch
