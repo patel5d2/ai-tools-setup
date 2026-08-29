@@ -1,0 +1,10 @@
+# Secrets — never commit (§3.3, §3.5)
+.env
+
+# Virtual environment (§3.2, §3.3)
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
