@@ -18,7 +18,7 @@ def main() -> None:
         from anthropic import Anthropic
 
         client = Anthropic()  # reads ANTHROPIC_API_KEY from env
-        model = os.getenv("MODEL", "claude-opus-4-8")  # override e.g. claude-haiku-4-5 to save cost
+        model = os.getenv("MODEL", "claude-opus-5")  # override with MODEL=claude-haiku-4-5 to save cost
         msg = client.messages.create(
             model=model, max_tokens=100,
             messages=[{"role": "user", "content": PROMPT}],
