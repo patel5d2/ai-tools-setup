@@ -1,0 +1,477 @@
+<!doctype html><html><head><meta charset="utf-8"><title>IT 7075C Mini Project — Dharmin Patel</title><style>
+@page { size: Letter; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+body { font: 10.5pt/1.55 -apple-system, "Helvetica Neue", Arial, sans-serif;
+       color: #14161a; margin: 0; }
+h1 { font-size: 20pt; margin: 0 0 .4em; letter-spacing: -.01em; }
+h2 { font-size: 14pt; margin: 1.6em 0 .5em; padding-bottom: .25em;
+     border-bottom: 2px solid #d8dce2; break-after: avoid; }
+h3 { font-size: 11.5pt; margin: 1.2em 0 .4em; break-after: avoid; }
+p, li { orphans: 3; widows: 3; }
+code { font: 9pt/1.4 "SF Mono", ui-monospace, Menlo, monospace;
+       background: #f1f3f6; padding: .12em .35em; border-radius: 3px; }
+pre { background: #f6f8fa; border: 1px solid #dfe3e8; border-left: 3px solid #8a94a6;
+      border-radius: 4px; padding: .7em .9em; overflow-x: auto; break-inside: avoid; }
+pre code { background: none; padding: 0; font-size: 8.6pt; white-space: pre-wrap;
+           word-break: break-word; }
+table { border-collapse: collapse; width: 100%; margin: .8em 0; font-size: 9.5pt;
+        break-inside: avoid; }
+th, td { border: 1px solid #ccd2da; padding: .4em .55em; text-align: left;
+         vertical-align: top; }
+th { background: #eef1f5; font-weight: 600; }
+blockquote { margin: 1em 0; padding: .55em .9em; background: #fff8e6;
+             border-left: 3px solid #e0b23c; }
+blockquote p { margin: .2em 0; }
+hr { border: 0; border-top: 1px solid #d8dce2; margin: 1.8em 0; }
+figure { margin: 1.1em 0 1.4em; break-inside: avoid; page-break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid #ccd2da;
+             border-radius: 4px; }
+figcaption { font-size: 8.6pt; color: #5a6472; margin-top: .4em;
+             padding-left: .2em; border-left: 2px solid #ccd2da; padding-left: .5em; }
+a { color: #1a4fd0; text-decoration: none; word-break: break-all; }
+strong { font-weight: 650; }
+</style></head><body><h1>IT 7075C — Applied AI for Cybersecurity</h1>
+<h2>Mini Project: Configure AI Tools and Environments</h2>
+<p><strong>Name:</strong> Dharmin Patel<br />
+<strong>Repository:</strong> https://github.com/patel5d2/ai-tools-setup<br />
+<strong>Video demonstration (§3.9):</strong> <code>&lt;PASTE UNLISTED YOUTUBE / DRIVE LINK HERE&gt;</code></p>
+<p><strong>Platform:</strong> MacBook Pro (Mac14,10), Apple M2 Pro, 12 cores (8P/4E), 16 GB unified memory, macOS 26.5.1 (arm64)<br />
+<strong>Editor:</strong> Visual Studio Code — Insiders</p>
+<blockquote>
+<p>§3.6 (Jetstream2) is not included: the competency was announced as unavailable, so its<br />
+10 points redistribute across the remaining competencies.</p>
+</blockquote>
+<hr />
+<h2>§3.1 — Integrated development environment (8 pts)</h2>
+<p>VS Code Insiders is installed at <code>/Applications/Visual Studio Code - Insiders.app</code>, with the<br />
+project folder <code>ai-tools-setup/</code> opened as the workspace root.</p>
+<p><strong>Required extensions, verified installed:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Identifier</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td><code>ms-python.python</code></td>
+<td>2026.4.0</td>
+</tr>
+<tr>
+<td>Pylance</td>
+<td><code>ms-python.vscode-pylance</code></td>
+<td>2026.3.1</td>
+</tr>
+<tr>
+<td>Python Debugger</td>
+<td><code>ms-python.debugpy</code></td>
+<td>2026.6.0</td>
+</tr>
+<tr>
+<td>Jupyter</td>
+<td><code>ms-toolsai.jupyter</code></td>
+<td>2026.6.2026071501</td>
+</tr>
+<tr>
+<td>GitHub Pull Requests</td>
+<td><code>github.vscode-pull-request-github</code></td>
+<td>0.166.0</td>
+</tr>
+</tbody>
+</table>
+<p>Listed with the Insiders CLI:</p>
+<pre><code>$ &quot;/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code&quot; \
+    --list-extensions --show-versions | grep -E 'ms-python|ms-toolsai|github'
+</code></pre>
+<p><strong>Script executed in the editor</strong> — <code>hello.py</code>:</p>
+<pre><code>$ python hello.py
+Hello from the isolated environment.
+Interpreter: /Users/dharminpatel/IT 7075C - APPLIED AI FOR CYBERSECURITY/ai-tools-setup/.venv/bin/python
+</code></pre>
+<p><strong>Notebook cell executed in the editor</strong> — <code>demo.ipynb</code>, first cell:</p>
+<pre><code>Kernel interpreter: /Users/dharminpatel/IT 7075C - APPLIED AI FOR CYBERSECURITY/ai-tools-setup/.venv/bin/python
+</code></pre>
+<p>Both print the interpreter path, which is the same evidence §3.2 requires: the editor is running<br />
+code inside the project virtual environment, not the system Python.</p>
+<figure><img src="img/3-1-extensions.png" alt="§3.1 Installed extensions listed with the Insiders CLI — Python, Pylance, Python Debugger, Jupyter and GitHub Pull Requests, with versions"><figcaption>§3.1 Installed extensions listed with the Insiders CLI — Python, Pylance, Python Debugger, Jupyter and GitHub Pull Requests, with versions</figcaption></figure><br />
+<figure><img src="img/3-1-script-run.png" alt="§3.1 Explorer showing the open project directory, and the integrated terminal running hello.py"><figcaption>§3.1 Explorer showing the open project directory, and the integrated terminal running hello.py</figcaption></figure><br />
+<figure><img src="img/3-1-notebook-run.png" alt="§3.1 demo.ipynb with an executed cell and its output"><figcaption>§3.1 demo.ipynb with an executed cell and its output</figcaption></figure>
+<hr />
+<h2>§3.2 — Isolated Python environments (10 pts)</h2>
+<p>The environment is a standard <code>venv</code> at <code>.venv/</code> in the project root, built on the Python 3.11<br />
+framework build rather than the Homebrew 3.14 interpreter — PyTorch does not yet publish wheels<br />
+for 3.14, and <code>torch</code> is required by §3.8.</p>
+<p><strong>Commands issued:</strong></p>
+<pre><code>$ /Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11 -m venv .venv   # create
+$ source .venv/bin/activate                                                          # activate
+$ python -m pip install -r requirements.txt                                          # install deps
+$ deactivate                                                                         # deactivate
+</code></pre>
+<p><strong>Verification — the interpreter resolves inside the environment, not the system install:</strong></p>
+<pre><code>$ python -V
+Python 3.11.2
+
+$ which python
+/Users/dharminpatel/IT 7075C - APPLIED AI FOR CYBERSECURITY/ai-tools-setup/.venv/bin/python
+</code></pre>
+<p>Contrast with the deactivated shell, where <code>which python3</code> returns <code>/opt/homebrew/bin/python3</code><br />
+(Python 3.14.7). The prefix difference is the proof of isolation.</p>
+<p><strong><code>requirements.txt</code>:</strong></p>
+<pre><code>python-dotenv
+numpy
+anthropic
+openai
+torch
+ipykernel
+notebook
+</code></pre>
+<p><strong><code>pip list</code> (abridged — key packages):</strong></p>
+<pre><code>anthropic      1.4.0
+ipykernel      7.3.0
+notebook       7.6.2
+numpy          2.4.6
+openai         3.11.0
+python-dotenv  1.2.3
+torch          2.14.0
+</code></pre>
+<p>The environment was registered as a named Jupyter kernel so it is selectable in the notebook<br />
+kernel picker as well as the interpreter picker:</p>
+<pre><code>$ python -m ipykernel install --user --name ai-tools-setup \
+    --display-name &quot;Python (.venv ai-tools-setup)&quot;
+Installed kernelspec ai-tools-setup in /Users/dharminpatel/Library/Jupyter/kernels/ai-tools-setup
+</code></pre>
+<figure><img src="img/3-2-venv-verify.png" alt="§3.2 Terminal showing python -V, which python, and pip list with the venv active"><figcaption>§3.2 Terminal showing python -V, which python, and pip list with the venv active</figcaption></figure><br />
+<figure><img src="img/3-2-interpreter-select.png" alt="§3.2 VS Code interpreter picker with the .venv path selected"><figcaption>§3.2 VS Code interpreter picker with the .venv path selected</figcaption></figure><br />
+<figure><img src="img/3-2-kernel-select.png" alt="§3.2 Notebook kernel picker with the .venv kernel selected"><figcaption>§3.2 Notebook kernel picker with the .venv kernel selected</figcaption></figure>
+<hr />
+<h2>§3.3 — Version control and remote repositories (10 pts)</h2>
+<p><strong>Repository:</strong> https://github.com/patel5d2/ai-tools-setup (public)</p>
+<p><strong>Local identity:</strong></p>
+<pre><code>$ git config --global user.name
+Dhrm976
+$ git config --global user.email
+dharminp976@gmail.com
+</code></pre>
+<p><strong>Commit history</strong> (more than the two required substantive commits):</p>
+<pre><code>$ git log --oneline
+95f9d42 Rebuild venv at current path; pin model to claude-opus-5; add Colab evidence notebook
+3629370 Remove outdated .DS_Store file
+6c760c1 Update demo notebook: adjust execution counts and add torchvision version check
+...
+6432a49 Add numpy — torch needs it and it silences the MPS-init warning
+8dd37de Scaffold: venv, gitignore, model-call + resource-inventory scripts
+</code></pre>
+<p><strong>Credential and environment exclusion — <code>.gitignore</code>:</strong></p>
+<pre><code># Secrets — never commit (§3.3, §3.5)
+.env
+
+# Virtual environment (§3.2, §3.3)
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS / tooling noise
+.DS_Store
+.claude-flow/
+</code></pre>
+<p><strong>Proof the exclusion works.</strong> A real <code>.env</code> containing a live API key exists in the working<br />
+directory, yet <code>git status</code> is clean and does not list it:</p>
+<pre><code>$ ls -l .env
+-rw-r--r--  1 dharminpatel  127 Sep  4 13:46 .env
+
+$ git status --short
+                       (no output — working tree clean)
+
+$ git ls-files | grep -c '^\.env$'
+0
+</code></pre>
+<p><code>.env.example</code> <strong>is</strong> committed, carrying the variable names but placeholder values, so the<br />
+repository documents what is required without disclosing anything:</p>
+<pre><code># Copy to .env and fill in. .env is gitignored — never commit real keys (§3.5).
+ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_API_KEY=sk-...
+</code></pre>
+<figure><img src="img/3-3-source-control.png" alt="§3.3 VS Code Source Control panel showing the origin remote and commit history"><figcaption>§3.3 VS Code Source Control panel showing the origin remote and commit history</figcaption></figure><br />
+<figure><img src="img/3-3-github-repo.png" alt="§3.3 GitHub repository page"><figcaption>§3.3 GitHub repository page</figcaption></figure><br />
+<figure><img src="img/3-3-gitignore-proof.png" alt="§3.3 Terminal: ls -l .env alongside a clean git status"><figcaption>§3.3 Terminal: ls -l .env alongside a clean git status</figcaption></figure>
+<hr />
+<h2>§3.4 — Hosted notebooks and persistent storage (10 pts)</h2>
+<p>Notebook: <code>colab_evidence.ipynb</code>, executed in Google Colab.</p>
+<p>Google Drive is mounted at <code>/content/drive</code>, a file is written beneath <code>MyDrive</code>, the runtime is<br />
+then restarted, and the file is read back after the runtime reconnects:</p>
+<pre><code class="language-python">from google.colab import drive
+drive.mount('/content/drive')
+
+from pathlib import Path
+import datetime
+p = Path('/content/drive/MyDrive/IT7075C/persistence.txt')
+p.parent.mkdir(parents=True, exist_ok=True)
+p.write_text(f'written before restart at {datetime.datetime.now()}\n')
+</code></pre>
+<p>After <strong>Runtime ▸ Restart session</strong>, the runtime is a fresh virtual machine — <code>/content</code> is empty<br />
+— but Drive is durable storage outside it, so remounting recovers the file:</p>
+<pre><code class="language-python">drive.mount('/content/drive')
+p = Path('/content/drive/MyDrive/IT7075C/persistence.txt')
+print('survived restart:', p.exists())
+print(p.read_text())
+</code></pre>
+<p>This is the point of the competency: Colab's local filesystem is ephemeral and disappears with<br />
+the runtime, so anything that must outlive a session has to be written to mounted Drive.</p>
+<figure><img src="img/3-4-mount.png" alt="§3.4 Drive mount confirmation output"><figcaption>§3.4 Drive mount confirmation output</figcaption></figure><br />
+<figure><img src="img/3-4-write.png" alt="§3.4 File written to Drive, with the file visible in the Colab file browser"><figcaption>§3.4 File written to Drive, with the file visible in the Colab file browser</figcaption></figure><br />
+<figure><img src="img/3-4-after-restart.png" alt="§3.4 Post-restart cell showing survived restart: True and the file contents read back"><figcaption>§3.4 Post-restart cell showing survived restart: True and the file contents read back</figcaption></figure>
+<hr />
+<h2>§3.5 — Programmatic model access with managed credentials (12 pts)</h2>
+<p>Provider: <strong>Anthropic</strong>, model <code>claude-opus-5</code>.</p>
+<p>The same source pattern works in both environments because both supply the key through the<br />
+process environment — only the <em>source</em> of that environment variable differs.</p>
+<p><strong>Credential-loading code</strong> (<code>src/model_test.py</code>):</p>
+<pre><code class="language-python">import os
+from dotenv import load_dotenv
+
+load_dotenv()          # local: reads .env. In Colab this is a no-op.
+                       # Colab: the key is injected into os.environ from Secrets instead.
+
+from anthropic import Anthropic
+client = Anthropic()   # reads ANTHROPIC_API_KEY from the environment
+model = os.getenv(&quot;MODEL&quot;, &quot;claude-opus-5&quot;)
+msg = client.messages.create(
+    model=model, max_tokens=100,
+    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: PROMPT}],
+)
+print(f&quot;[Anthropic {model}] {msg.content[0].text}&quot;)
+</code></pre>
+<p>No key is ever a literal in the source. <code>Anthropic()</code> is constructed with no arguments and the<br />
+SDK resolves <code>ANTHROPIC_API_KEY</code> from the environment itself.</p>
+<p><strong>Local environment — key from <code>.env</code> (gitignored):</strong></p>
+<pre><code>$ python src/model_test.py
+[Anthropic claude-opus-5] API call successful — everything's working as expected.
+</code></pre>
+<p><strong>Colab environment — key from the Secrets panel:</strong></p>
+<pre><code class="language-python">from google.colab import userdata
+import os
+os.environ['ANTHROPIC_API_KEY'] = userdata.get('ANTHROPIC_API_KEY')
+</code></pre>
+<p>The key is stored in Colab's <strong>🔑 Secrets</strong> sidebar with <em>Notebook access</em> enabled. It is held<br />
+against the Google account, not inside the notebook, so the notebook can be shared or committed<br />
+without leaking the credential — the Colab analogue of <code>.env</code> plus <code>.gitignore</code>.</p>
+<blockquote>
+<p>All screenshots below are cropped or redacted so no key material is visible. The Secrets panel<br />
+is captured with the value hidden (the eye toggle left off).</p>
+</blockquote>
+<figure><img src="img/3-5-local-response.png" alt="§3.5 Local model response in the VS Code terminal"><figcaption>§3.5 Local model response in the VS Code terminal</figcaption></figure><br />
+<figure><img src="img/3-5-colab-secrets.png" alt="§3.5 Colab Secrets panel with ANTHROPIC_API_KEY present, value hidden, notebook access on"><figcaption>§3.5 Colab Secrets panel with ANTHROPIC_API_KEY present, value hidden, notebook access on</figcaption></figure><br />
+<figure><img src="img/3-5-colab-response.png" alt="§3.5 Colab cell showing the model response"><figcaption>§3.5 Colab cell showing the model response</figcaption></figure>
+<hr />
+<h2>§3.6 — Cloud virtual machine deployment on Jetstream2</h2>
+<p>Not attempted — announced as unavailable. Under the stated contingency the ten points are<br />
+redistributed across the remaining competencies.</p>
+<hr />
+<h2>§3.7 — Virtualization and isolated targets (12 pts)</h2>
+<p><strong>Platform: Docker Desktop. Target: OWASP Juice Shop.</strong></p>
+<p><strong>Why a container rather than Metasploitable2.</strong> This machine is Apple Silicon (arm64).<br />
+VirtualBox has no arm64 host build, and Metasploitable2 ships only as a 32-bit x86 image, so it<br />
+cannot be virtualized here without full CPU emulation. The assignment's stated alternative for<br />
+exactly this case is a containerized target, so OWASP Juice Shop was deployed instead.</p>
+<p><strong>Network configuration — user-defined bridge, NAT, loopback-bound publish:</strong></p>
+<pre><code>$ docker network inspect pentest-lab \
+    --format 'driver={{.Driver}} subnet={{range .IPAM.Config}}{{.Subnet}} gw={{.Gateway}}{{end}}'
+driver=bridge subnet=172.28.0.0/16 gw=172.28.0.1
+
+$ docker run -d --name juice-shop --network pentest-lab \
+    -p 127.0.0.1:3000:3000 bkimminich/juice-shop
+</code></pre>
+<p><strong>Justification of the network mode.</strong> A user-defined bridge network in NAT mode was chosen over<br />
+host networking for three reasons:</p>
+<ol>
+<li><strong>The target is deliberately vulnerable.</strong> On a bridge it has no address on the physical LAN,<br />
+   so nothing outside this machine can route to it. Host networking would place it directly on<br />
+   the host's interfaces and expose it to the local network.</li>
+<li><strong>The publish is bound to <code>127.0.0.1</code>, not <code>0.0.0.0</code>.</strong> The default <code>-p 3000:3000</code> listens on<br />
+   every host interface, including Wi-Fi. Binding the loopback address explicitly means only<br />
+   this machine can reach the service — the smallest exposure that still permits host-to-guest<br />
+   testing.</li>
+<li><strong>A user-defined bridge gives container-name DNS</strong>, so lab hosts address each other by name<br />
+   (<code>juice-shop</code>) rather than by an address that changes on restart. The default bridge does not<br />
+   provide this.</li>
+</ol>
+<p>Host-only networking was not selected because Docker Desktop on macOS has no equivalent mode; a<br />
+loopback-bound bridge achieves the same containment goal.</p>
+<p><strong>Running guest:</strong></p>
+<pre><code>$ docker ps
+NAMES        IMAGE                   STATUS         PORTS
+juice-shop   bkimminich/juice-shop   Up 6 seconds   127.0.0.1:3000-&gt;3000/tcp
+</code></pre>
+<p><strong>Reachability — service reached from the host:</strong></p>
+<pre><code>$ nc -zv 127.0.0.1 3000
+localhost [127.0.0.1] 3000 (hbci) open
+
+$ curl -sI http://127.0.0.1:3000
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Recruiting: /#/jobs
+
+$ curl -s http://127.0.0.1:3000 | grep -io '&lt;title&gt;.*&lt;/title&gt;'
+&lt;title&gt;OWASP Juice Shop&lt;/title&gt;
+</code></pre>
+<p><strong>Reachability — ICMP on the lab network:</strong></p>
+<pre><code>$ docker run --rm --network pentest-lab busybox ping -c 3 juice-shop
+PING juice-shop (172.28.0.2): 56 data bytes
+64 bytes from 172.28.0.2: seq=0 ttl=64 time=0.855 ms
+64 bytes from 172.28.0.2: seq=1 ttl=64 time=0.089 ms
+64 bytes from 172.28.0.2: seq=2 ttl=64 time=0.134 ms
+
+--- juice-shop ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+</code></pre>
+<p><strong>An honest note on the ping.</strong> Pinging <code>172.28.0.2</code> <em>directly from macOS</em> fails with 100% packet<br />
+loss, and this is expected rather than a misconfiguration — see the problem log below. Layer-3<br />
+reachability is therefore demonstrated on the lab network itself, and host-to-guest reachability<br />
+is demonstrated at layer 4 and layer 7 through the published port, which is the path an attack<br />
+tool would actually use against this target.</p>
+<figure><img src="img/3-7-docker-ps.png" alt="§3.7 docker ps showing the running guest and its port binding"><figcaption>§3.7 docker ps showing the running guest and its port binding</figcaption></figure><br />
+<figure><img src="img/3-7-network.png" alt="§3.7 docker network inspect showing the bridge driver, subnet and gateway"><figcaption>§3.7 docker network inspect showing the bridge driver, subnet and gateway</figcaption></figure><br />
+<figure><img src="img/3-7-reachability.png" alt="§3.7 nc, curl and ping output side by side"><figcaption>§3.7 nc, curl and ping output side by side</figcaption></figure><br />
+<figure><img src="img/3-7-juiceshop-browser.png" alt="§3.7 Juice Shop landing page open in the host browser at 127.0.0.1:3000"><figcaption>§3.7 Juice Shop landing page open in the host browser at 127.0.0.1:3000</figcaption></figure>
+<hr />
+<h2>§3.8 — Computational resource inventory (8 pts)</h2>
+<p>Collected by <code>src/resource_inventory.py</code>, which branches to the correct system utility for the<br />
+platform it is running on and then runs the same framework query everywhere.</p>
+<h3>Local machine — MacBook Pro, Apple M2 Pro</h3>
+<p><em>System utility</em> (<code>system_profiler SPHardwareDataType SPDisplaysDataType</code>, serial numbers cropped):</p>
+<pre><code>Model Name: MacBook Pro
+Model Identifier: Mac14,10
+Chip: Apple M2 Pro
+Total Number of Cores: 12 (8 Performance and 4 Efficiency)
+Memory: 16 GB
+
+Apple M2 Pro:
+  Chipset Model: Apple M2 Pro
+  Type: GPU
+  Bus: Built-In
+  Total Number of Cores: 19
+  Metal Support: Metal 4
+</code></pre>
+<p><em>Framework query</em> (<code>torch</code>):</p>
+<pre><code>CPUs (os.cpu_count): 12
+torch 2.14.0
+CUDA available: False
+MPS (Apple GPU) available: True
+</code></pre>
+<p><strong>Interpretation.</strong> <code>CUDA available: False</code> is the correct and expected result: CUDA is NVIDIA's<br />
+API, and this machine has an Apple integrated GPU, not an NVIDIA discrete card. The GPU is<br />
+present and usable — through Metal, which PyTorch exposes as the MPS backend, reporting <code>True</code>.<br />
+Reading only the CUDA line would wrongly conclude "no GPU"; the 19 GPU cores are available for<br />
+acceleration, just through a different backend. Note also that memory is <em>unified</em>: the 16 GB is<br />
+shared between CPU and GPU rather than the GPU holding separate dedicated VRAM.</p>
+<h3>Google Colab</h3>
+<p><em>System utility:</em> <code>nvidia-smi</code>, plus <code>lscpu</code> and <code>free -h</code>.<br />
+<em>Framework query:</em> <code>torch.cuda.is_available()</code>.</p>
+<p>Colab's answer depends on the runtime type selected under <strong>Runtime ▸ Change runtime type</strong>. On a<br />
+CPU-only runtime <code>nvidia-smi</code> is absent and <code>torch.cuda.is_available()</code> returns <code>False</code>; on a<br />
+GPU runtime <code>nvidia-smi</code> reports the attached accelerator and CUDA is available. The runtime used<br />
+for this evidence is recorded in the screenshot below.</p>
+<figure><img src="img/3-8-local-system.png" alt="§3.8 Local system_profiler output, serial cropped"><figcaption>§3.8 Local system_profiler output, serial cropped</figcaption></figure><br />
+<figure><img src="img/3-8-local-torch.png" alt="§3.8 Local torch query showing CUDA False and MPS True"><figcaption>§3.8 Local torch query showing CUDA False and MPS True</figcaption></figure><br />
+<figure><img src="img/3-8-colab-system.png" alt="§3.8 Colab nvidia-smi / lscpu / free output"><figcaption>§3.8 Colab nvidia-smi / lscpu / free output</figcaption></figure><br />
+<figure><img src="img/3-8-colab-torch.png" alt="§3.8 Colab torch query output"><figcaption>§3.8 Colab torch query output</figcaption></figure>
+<hr />
+<h2>§3.9 — Recorded technical demonstration (12 pts)</h2>
+<p><strong>Link:</strong> <code>&lt;PASTE UNLISTED YOUTUBE / DRIVE LINK HERE&gt;</code> (also on page 1)</p>
+<p>Running order used in the recording:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Segment</th>
+<th>Shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Project open in VS Code Insiders; Extensions view</td>
+<td>§3.1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Activate venv; <code>python -V</code>, <code>which python</code>; interpreter and kernel pickers</td>
+<td>§3.2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Edit a file, commit and push from the Source Control panel; <code>ls -l .env</code> beside a clean <code>git status</code></td>
+<td>§3.3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Colab: mount Drive, write file, restart runtime, read it back</td>
+<td>§3.4</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>python src/model_test.py</code> locally; the same call in Colab from Secrets</td>
+<td>§3.5</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>docker ps</code>, network inspect, <code>curl</code> and <code>ping</code>, Juice Shop in the browser</td>
+<td>§3.7</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>resource_inventory.py</code> locally and in Colab</td>
+<td>§3.8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Problems encountered and resolutions</h2>
+<p><strong>1. The virtual environment silently stopped working after the project was moved.</strong><br />
+Activating <code>.venv</code> succeeded without complaint, but the very next command failed with<br />
+<code>command not found: python</code>. The cause was in <code>.venv/pyvenv.cfg</code>, which recorded<br />
+<code>command = ... -m venv /Users/dharminpatel/ai-tools-setup/.venv</code> — the environment had been<br />
+created at an earlier location, and the project directory had since been moved twice. A venv<br />
+stores absolute paths in its activation script and interpreter symlinks, so it does not survive<br />
+being relocated. The fix was to discard and rebuild it in place<br />
+(<code>rm -rf .venv &amp;&amp; python3.11 -m venv .venv &amp;&amp; pip install -r requirements.txt</code>), which is the<br />
+correct response rather than a workaround: a virtual environment is disposable by design, and<br />
+<code>requirements.txt</code> exists precisely so it can be reconstructed. This is also the strongest<br />
+argument for <code>.venv/</code> being in <code>.gitignore</code> — the directory is not portable, so committing it<br />
+would ship something broken to any other machine.</p>
+<p><strong>2. Choosing an interpreter version: newest is not always usable.</strong> The Homebrew default is<br />
+Python 3.14.7, but building the environment on it fails because PyTorch has not yet published<br />
+3.14 wheels, and <code>torch</code> is required for the §3.8 framework query. The environment was therefore<br />
+built deliberately on the Python 3.11 framework build. The lesson is that the constraint flows<br />
+from the dependencies, not from the interpreter — the isolated environment is what makes holding<br />
+an older Python for this project harmless to everything else on the machine.</p>
+<p><strong>3. Host-to-guest <code>ping</code> fails on Docker Desktop for macOS, and it is not a misconfiguration.</strong><br />
+<code>ping 172.28.0.2</code> from macOS returned 100% packet loss even though the container was healthy and<br />
+its web service answered normally. Docker on macOS does not run containers on the host kernel; it<br />
+runs them inside a Linux virtual machine, and <code>172.28.0.0/16</code> exists only inside that VM's<br />
+network namespace. macOS has no route to it, so ICMP has nowhere to go, while TCP still works<br />
+because Docker's userland proxy forwards the published port across the VM boundary. The diagnosis<br />
+was confirmed by pinging the same container successfully from a second container attached to the<br />
+same bridge. The resolution was to demonstrate ICMP where it is meaningful — on the lab network —<br />
+and host-to-guest reachability at layer 4 and layer 7 via the published port. Time was lost here<br />
+treating a platform boundary as a configuration error; checking the platform's architecture first<br />
+would have been quicker than re-checking the network settings.</p>
+<hr />
+<h2>One decision that would be made differently</h2>
+<p><strong>The <code>.env</code> file would have been created from <code>.env.example</code> on day one, before any code was<br />
+written.</strong> The safe pattern was adopted early enough that no key was ever committed, but the<br />
+ordering was luck as much as design: the ignore rule and the example file were added alongside<br />
+the first real credential rather than ahead of it. The correct discipline is to commit<br />
+<code>.gitignore</code> and <code>.env.example</code> in the very first commit, so the repository is incapable of<br />
+accepting a secret before one exists to leak — with <code>git rm --cached</code> and a rewritten history<br />
+being the only remedy afterwards, and a rotated key the only safe assumption. A second, smaller<br />
+change: the environment would be pinned with <code>pip freeze &gt; requirements.txt</code> rather than left as<br />
+bare package names, so the exact versions in this report are reproducible instead of drifting to<br />
+whatever is current at the next install.</p></body></html>

@@ -52,7 +52,7 @@ Kernel interpreter: /Users/dharminpatel/IT 7075C - APPLIED AI FOR CYBERSECURITY/
 Both print the interpreter path, which is the same evidence §3.2 requires: the editor is running
 code inside the project virtual environment, not the system Python.
 
-![§3.1 Extensions view with Python, Jupyter and GitHub extensions installed](img/3-1-extensions.png)
+![§3.1 Installed extensions listed with the Insiders CLI — Python, Pylance, Python Debugger, Jupyter and GitHub Pull Requests, with versions](img/3-1-extensions.png)
 ![§3.1 Explorer showing the open project directory, and the integrated terminal running hello.py](img/3-1-script-run.png)
 ![§3.1 demo.ipynb with an executed cell and its output](img/3-1-notebook-run.png)
 
