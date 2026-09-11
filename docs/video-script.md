@@ -442,3 +442,4 @@ docker run --rm --network pentest-lab busybox ping -c 3 juice-shop
 system_profiler SPHardwareDataType SPDisplaysDataType
 python src/resource_inventory.py
 ```
+
